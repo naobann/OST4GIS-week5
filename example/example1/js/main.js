@@ -11,7 +11,7 @@ $('button#my-button').click(function(e) {
   appState.numericField1 = $('#num1').val();
   console.log("numericField1", appState.numericField1);
 
-  appState.numericField2 = $('#num2').val();
+ appState.numericField2 = $('#num2').val();
   console.log("numericField2", appState.numericField2);
 
   appState.booleanField = $('#boolean')[0].checked;

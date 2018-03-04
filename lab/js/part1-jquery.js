@@ -172,4 +172,61 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 // been interpreted. It is, therefore, an example of asynchronous behavior.
 $(document).ready(function() {
   // Do your stuff here
+//task 1
+$('#text-label1').text('Title')
+$('#text-label2').text('Name')
+$('#text-label3').text('Address')
+$('#number-label').text('Phone')
+$('#checkbox-label1').text('Student')
+$('#checkbox-label2').text('Cool')
+$('#color-label').text('Color')
+$('#number-label2').text('Lat')
+$('#number-label3').text('Long')
+//task 2
+  $('#text-input1').val('Ms')
+  $('#text-input2').val('Yijun')
+  $('#text-input3').val('3400 Walnut St')
+  $('#numeric-input').val(18810698032)
+  $('#cbox-input1').prop('checked',true)
+  $('#cbox-input2').prop('checked',true)
+  $('#color-input').val('#f44183')
+  $('#numeric-input2').val(39.952767)
+  $('#numeric-input3').val(-75.192178)
+//task 3
+
+  /*  var x = document.createElement("Title","Name","Address","Phone","Student","Cool","Favorite Color");
+    x.setAttribute("text","text","text","numeric","checkbox","checkbox","color");
+    x.setAttribute("Ms", "Yijun","3400 Walnut St",18810698032,true,true,"#4286f4");
+    document.body.appendChild(x);*/
+var obj= {
+  title : $('#text-input1').val(),
+  name : $('#text-input2').val(),
+  address : $('#text-input3').val(),
+  phone : $('#numeric-input').val(),
+  student : $('#cbox-input1').val(),
+  cool : $('#cbox-input2').val(),
+  color : $('#color-input').val(),
+  lat:$('#numeric-input2').val(),
+  long:$('#numeric-input3').val()
+};
+
+//task 4
+$('#text-input1').prop('disabled', false);
+$('#text-input2').prop('disabled', false);
+$('#text-input3').prop('disabled', false);
+$('#numeric-input').prop('disabled', false);
+$('#cbox-input1').prop('disabled', false);
+$('#cbox-input2').prop('disabled', false);
+$('#color-input').prop('disabled', false);
+$('#numeric-input2').prop('disabled',false);
+$('#numeric-input3').prop('disabled',false);
+
+//tast 5
+$('button').click(function() {
+console.log(obj);
+});
+
+//task 6
+L.circleMarker([obj.lat,obj.long],{'radius':20,'fillColor':obj.color}).bindPopup("Yijun's location").addTo(map);
+
 });
